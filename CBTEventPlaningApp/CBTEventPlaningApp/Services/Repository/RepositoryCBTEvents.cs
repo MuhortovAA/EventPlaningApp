@@ -23,16 +23,16 @@ namespace CBTEventPlaningApp.Services.Repository
 		{
             var items = new List<CBTEvent>() {
 
-                    new CBTEvent() {
-                        Id = 1,
-                        Create = DateTime.Now,
-                        Active = true,
-                        UserId = 1 },
-                    new CBTEvent() {
-                        Id = 2,
-                        Create = DateTime.Now,
-                        Active = true,
-                        UserId = 1 }
+                    //new CBTEvent() {
+                    //    Id = 1,
+                    //    Create = DateTime.Now,
+                    //    //Active = true,
+                    //    UserId = 1 },
+                    //new CBTEvent() {
+                    //    Id = 2,
+                    //    Create = DateTime.Now,
+                    //    //Active = true,
+                    //    UserId = 1 }
                  };
             return items;
         }

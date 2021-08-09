@@ -1,17 +1,22 @@
 ﻿@model IEnumerable<CBTEvent>
-	<table>
-		<tr>
-			<th>№</th>
-			<th>Дата</th>
-			<th>Событие</th>
-			
-		</tr>
-		@foreach (CBTEvent item in Model)
-		{
+	<div class="card col shadow-sm">
+
+		<table class="table table-bordered table-striped table-hover">
 			<tr>
-				<td>@item.Id</td>
-				<td>@item.Create</td>
-				<td>Какое то событие</td>
+				<th class="text-center">№</th>
+				<th class="text-center">Дата</th>
+				<th class="text-center">Событие</th>
+				<th class="text-center">Действие</th>
 			</tr>
-		}
-	</table>>
+			@foreach (CBTEvent item in Model)
+			{
+		<tr>
+			<td>@item.Id</td>
+			<td>@item.EventCreate</td>
+			<td>Какое то событие</td>
+			<td>Какое то действие</td>
+
+		</tr>
+			}
+		</table>
+	</div>

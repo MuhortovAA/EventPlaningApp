@@ -9,7 +9,7 @@ namespace CBTEventPlaningApp.Services.Models
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public DateTime? Create { get; set; }
-        public bool? Active { get; set; }
+		public int CountUser { get; set; }
+		public DateTime EventCreate { get; set; }
     }
 }

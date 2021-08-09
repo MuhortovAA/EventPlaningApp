@@ -1,4 +1,5 @@
-﻿using CBTEventPlaningApp.Services.Interfaces;
+﻿using CBTEventPlaningApp.Services.Interface;
+using CBTEventPlaningApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,15 +10,15 @@ namespace CBTEventPlaningApp.Controllers
 {
 	public class HomeController : Controller
 	{
-		private ICBTEvent repository;
+		private IEFRepository repository;
 
-		public HomeController(ICBTEvent repo)
+		public HomeController(IEFRepository repo)
 		{
 			repository = repo;
 		}
-		public IActionResult Index()
-		{
-			return View(repository.GetData());
-		}
+		public IActionResult Index() => View(repository.GetEvents());
+
+		public IActionResult Detailes(string id) => View(repository.GetAllInfoEvent(id));
+
 	}
 }
