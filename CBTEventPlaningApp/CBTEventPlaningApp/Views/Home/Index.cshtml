@@ -1,0 +1,17 @@
+﻿@model IEnumerable<CBTEvent>
+	<table>
+		<tr>
+			<th>№</th>
+			<th>Дата</th>
+			<th>Событие</th>
+			
+		</tr>
+		@foreach (CBTEvent item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Create</td>
+				<td>Какое то событие</td>
+			</tr>
+		}
+	</table>>
