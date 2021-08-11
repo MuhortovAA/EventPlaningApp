@@ -1,0 +1,40 @@
+﻿@model CBTEventPlaningApp.Services.Models.ViewModel.ViewEvent
+@{ ViewData["Title"] = "Редактировать событие"; }
+
+
+<div class="list-form container p-0">
+    <div class="card">
+        <div class="card-header">Редактировать событие
+            <div>
+                <a class="btn btn-outline-info" asp-controller="Event" asp-action="AddTitle" asp-route-id="@Model.item.Id" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-plus"></i> </a>
+            </div>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th class="text-center">Заголовок</th>
+                    <th class="text-center">Описание</th>
+                    <th class="text-center"></th>
+                </tr>
+                @foreach (CBTDetailes item in Model.detailes)
+                {
+        <tr>
+            <td class="text-center">@item.Title</td>
+            <td class="text-center">@item.SubTitle</td>
+            <td class="text-center">
+                <div class="btn-group">
+                    <a class="btn btn-outline-primary" asp-action="EditTitle" asp-route-id="@item.Id" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i> </a>
+                    <a class="btn btn-outline-danger" asp-action="DeleteTitle" asp-route-id="@item.Id" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i> </a>
+                </div>
+
+            </td>
+        </tr>}
+            </table>
+            <div>
+                <a asp-action="Index" asp-controller="Home">Назад</a>
+            </div>
+
+        </div>
+    </div>
+</div>
