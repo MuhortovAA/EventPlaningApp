@@ -1,0 +1,36 @@
+﻿@model RegisterViewModel
+
+
+<div class="container p-0">
+    <div class="card">
+        <div class="card-header">Регистрация нового пользователя</div>
+        <div class="card-body">
+
+            <form method="post" asp-controller="Account" asp-action="Register">
+                <h2 class="text-center">CBT Events</h2>
+                <div asp-validation-summary="ModelOnly"></div>
+                <div>
+                    <label asp-for="Email"></label><br />
+                    <input asp-for="Email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div>
+                    <label asp-for="Password"></label><br />
+                    <input asp-for="Password" />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div>
+                    <label asp-for="PasswordConfirm"></label><br />
+                    <input asp-for="PasswordConfirm" />
+                    <span asp-validation-for="PasswordConfirm"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Регистрация" />
+                </div>
+            </form>
+            <div>
+                <a asp-controller="Home" asp-action="Index">На главную</a>
+            </div>
+        </div>
+    </div>
+</div>
