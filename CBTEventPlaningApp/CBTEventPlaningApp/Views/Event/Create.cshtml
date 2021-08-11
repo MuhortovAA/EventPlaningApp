@@ -1,0 +1,35 @@
+﻿@model CBTEventPlaningApp.Services.Models.ViewModel.CreateEvent
+@{ ViewData["Title"] = "Создать событие"; }
+<div class="list-form container p-0">
+    <form asp-action="Create">
+        <div class="card">
+            <div class="card-header">Создать событие</div>
+            <div class="card-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CountUser" class="control-label"></label>
+                    <input asp-for="CountUser" class="form-control" />
+                    <span asp-validation-for="CountUser" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EventCreate" class="control-label"></label>
+                    <input asp-for="EventCreate" class="form-control" />
+                    <span asp-validation-for="EventCreate" class="text-danger"></span>
+                </div>
+                <div class="float-right">
+                    <button class="btn btn-primary " data-toggle="tooltip" data-placement="top" title="Create"><i class="fa fa-save"></i> Создать</button>
+                    <a class="btn btn-secondary" href="@Url.Action("Index", "Home")" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fa fa-close"></i> Отмена</a>
+                </div>
+                <br />
+                <div>
+                    <a asp-action="Index" asp-controller="Home">Назад</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

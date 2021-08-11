@@ -1,0 +1,34 @@
+﻿@model CBTDetailes
+@{ ViewData["Title"] = "Редактировать описание события"; }
+<div class="list-form container p-0">
+    <form asp-action="EditTitle">
+        <div class="card">
+            <div class="card-header">Редактировать описание события</div>
+            <div class="card-body">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="EventId" />
+
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubTitle" class="control-label"></label>
+                    <input asp-for="SubTitle" class="form-control" />
+                    <span asp-validation-for="SubTitle" class="text-danger"></span>
+                </div>
+                <div class="float-right">
+                    <button class="btn btn-primary " data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-save"></i> Сохранить</button>
+                    <a class="btn btn-secondary" href="@Url.Action("EditTitle", "Event", new {id=Model.EventId })" data-toggle="tooltip" data-placement="top" title="Cancel"><i class="fa fa-close"></i> Отмена</a>
+                </div>
+                <br />
+                <div>
+                    <a asp-action="Index" asp-controller="Home">Назад</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

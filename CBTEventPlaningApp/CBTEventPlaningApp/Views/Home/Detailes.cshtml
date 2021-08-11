@@ -1,2 +1,38 @@
-﻿@model CBTEventPlaningApp.Services.Models.ViewModel.ViewEvent
-@{ ViewData["Title"] = "Подробности"; }
+﻿@using Microsoft.AspNetCore.Identity
+@model CBTEventPlaningApp.Services.Models.ViewModel.ViewEvent
+@inject SignInManager<IdentityUser> SignInManager
+
+@{ ViewData["Title"] = "Информация о событии"; }
+
+
+<div class="list-form container p-0">
+    <div class="card">
+        <div class="card-header">
+            Информация о событии
+            @if (SignInManager.IsSignedIn(User))
+            {<div><a class="btn btn-outline-info" asp-controller="Event" asp-action="Detailes" asp-route-id="@Model.item.Id" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i> </a></div>}
+        </div>
+        <div class="card-body">
+
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th class="text-center">Заголовок</th>
+                    <th class="text-center">Описание</th>
+
+                </tr>
+                @foreach (CBTDetailes item in Model.detailes)
+                {
+    <tr>
+        <td class="text-center">@item.Title</td>
+        <td class="text-center">@item.SubTitle</td>
+
+    </tr>
+}
+            </table>
+
+            <div>
+                <a asp-action="Index" asp-controller="Home">Назад</a>
+            </div>
+        </div>
+    </div>
+</div>
