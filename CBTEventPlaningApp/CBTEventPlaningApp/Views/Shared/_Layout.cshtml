@@ -10,59 +10,59 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <link asp-href-include="~/bootstrap/4.6.0/content/Content/bootstrap.css" rel="stylesheet" />
-    <link asp-href-include="~/fontawesome/4.7.0/Content/Content/font-awesome.min.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width" />
+	<link asp-href-include="~/bootstrap/4.6.0/content/Content/bootstrap.css" rel="stylesheet" />
+	<link asp-href-include="~/fontawesome/4.7.0/Content/Content/font-awesome.min.css" rel="stylesheet" />
 
-    <title>@ViewBag.Title</title>
+	<title>@ViewBag.Title</title>
 </head>
 <body>
-    <header>
-        <nav class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <div class="row flex-grow-1">
-                    <div class="col">
-                        <div class="navbar-collapse collapse d-sm-flex flex-sm-row-reverse float-right">
-                            <ul class="navbar-nav flex-grow-1">
-                                @*<li class="nav-item">
-                                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="FindAdses">Поиск</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Home" asp-action="CreateAds">Подать обьявление</a>
-                                    </li>*@
+	<header>
+		<nav class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container">
+				<div class="row flex-grow-1">
+					<div class="col">
+						<div class="navbar-collapse collapse d-sm-flex flex-sm-row-reverse float-right">
+							<ul class="navbar-nav flex-grow-1">
+								@*<li class="nav-item">
+										<a class="nav-link" asp-area="" asp-controller="Home" asp-action="FindAdses">Поиск</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" asp-controller="Home" asp-action="CreateAds">Подать обьявление</a>
+									</li>*@
 
-                                @if (SignInManager.IsSignedIn(User))
-                                    {
-                                        <li class="nav-item"><a class="nav-link" asp-action="Logout" asp-controller="Account">Выход</a></li>
-                                        <li><a class="nav-link" >Пользователь: @UserManager.GetUserName(User)</a></li>
-                                    }
-                                    else
-                                    {
-                                        <li class="nav-item"><a class="nav-link" asp-action="Register" asp-controller="Account">Регистрация</a></li>
-                                        <li class="nav-item"><a class="nav-link" asp-action="Login" asp-controller="Account">Вход</a></li>
-                                    }
-                                @*<li class="nav-item"><a class="nav-link" asp-action="Create" asp-controller="Event">Добавить</a></li>*@
+								@if (SignInManager.IsSignedIn(User))
+								{
+									<li class="nav-item"><a class="nav-link" asp-action="Create" asp-controller="Event">Добавить</a></li>
+									<li class="nav-item"><a class="nav-link" asp-action="Logout" asp-controller="Account">Выход</a></li>
+									<li><a class="nav-link">Пользователь: @UserManager.GetUserName(User)</a></li>
+								}
+								else
+								{
+									<li class="nav-item"><a class="nav-link" asp-action="Register" asp-controller="Account">Регистрация</a></li>
+									<li class="nav-item"><a class="nav-link" asp-action="Login" asp-controller="Account">Вход</a></li>
+								}
 
-                                @*<li class="nav-item"><a class="nav-link" asp-action="Login" asp-controller="Account">Вход</a></li>*@
-                            </ul>
-                        </div>
+								@*<li class="nav-item"><a class="nav-link" asp-action="Login" asp-controller="Account">Вход</a></li>*@
+							</ul>
+						</div>
 
-                    </div>
+					</div>
 
-                </div>
-            </div>
+				</div>
+			</div>
 
-        </nav>
-    </header>
-    <div class="bg-white">
-        @if (TempData["message"] != null)
-        {<div class="alert-success">@TempData["message"]</div>}
-        @RenderBody()
-    </div>
-    <script src="~/jquery/3.0.0/Content/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/jquery.validation/1.19.3/Content/Scripts/jquery.validate.min.js"></script>
-    <script src="~/microsoft.jquery.unobtrusive.validation/3.2.11/Content/Scripts/jquery.validate.unobtrusive.js"></script>
-    <script src="~/bootstrap/4.6.0/content/Scripts/bootstrap.min.js"></script>
-    <script src="~/bootstrap/4.6.0/content/Scripts/bootstrap.bundle.min.js"></script>
+		</nav>
+	</header>
+	<div class="bg-white">
+		@if (TempData["message"] != null)
+		{<div class="alert-success">@TempData["message"]</div>}
+		@RenderBody()
+	</div>
+	<script src="~/jquery/3.0.0/Content/Scripts/jquery-3.0.0.min.js"></script>
+	<script src="~/jquery.validation/1.19.3/Content/Scripts/jquery.validate.min.js"></script>
+	<script src="~/microsoft.jquery.unobtrusive.validation/3.2.11/Content/Scripts/jquery.validate.unobtrusive.js"></script>
+	<script src="~/bootstrap/4.6.0/content/Scripts/bootstrap.min.js"></script>
+	<script src="~/bootstrap/4.6.0/content/Scripts/bootstrap.bundle.min.js"></script>
 </body>
 </html>

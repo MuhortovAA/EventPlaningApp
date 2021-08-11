@@ -102,11 +102,19 @@ namespace CBTEventPlaningApp.Controllers
                         "Account",
                         new { userId = user.Id, code = code },
                         protocol: HttpContext.Request.Scheme);
-                    EmailService emailService = new EmailService();
-                    await emailService.SendEmailAsync(model.Email, "Confirm your account",
-                        $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>link</a>");
+                    //TODO: убрать условие если есть  smtp server
+                    if (!true)
+                    {
+                        EmailService emailService = new EmailService();
+                        await emailService.SendEmailAsync(model.Email, "Confirm your account",
+                            $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>link</a>");
+                    }
 
-                    return Content("Для завершения регистрации проверьте электронную почту и перейдите по ссылке, указанной в письме");
+                    TempData["message"] = $"Регистрация прошла успешно. Вам направлено письмо для подтверждения.";
+
+                return RedirectToAction(actionName: "Index", controllerName: "Home");
+                    //return Content("Для завершения регистрации проверьте электронную почту и перейдите по ссылке, указанной в письме");
+
                 }
                 else
                 {

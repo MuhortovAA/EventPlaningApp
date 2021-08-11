@@ -7,26 +7,25 @@
         <div class="card-body">
 
             <form method="post" asp-controller="Account" asp-action="Register">
-                <h2 class="text-center">CBT Events</h2>
+                <h2 class="text-center">CBT Регистрация</h2>
                 <div asp-validation-summary="ModelOnly"></div>
-                <div>
-                    <label asp-for="Email"></label><br />
-                    <input asp-for="Email" />
-                    <span asp-validation-for="Email"></span>
-                </div>
-                <div>
-                    <label asp-for="Password"></label><br />
-                    <input asp-for="Password" />
-                    <span asp-validation-for="Password"></span>
-                </div>
-                <div>
-                    <label asp-for="PasswordConfirm"></label><br />
-                    <input asp-for="PasswordConfirm" />
-                    <span asp-validation-for="PasswordConfirm"></span>
-                </div>
-                <div>
-                    <input type="submit" value="Регистрация" />
-                </div>
+				<div class="form-group">
+					<div><span asp-validation-for="Email" class="text-danger"></span></div>
+					<input asp-for="Email" class="form-control" placeholder="Email" />
+
+				</div>
+				<div class="form-group">
+					<div><span asp-validation-for="Password" class="text-danger"></span></div>
+					<input asp-for="Password" class="form-control" placeholder="Password" />
+					
+				</div>
+				<div class="form-group">
+					<div><span asp-validation-for="PasswordConfirm" class="text-danger"></span></div>
+					<input asp-for="PasswordConfirm" class="form-control" placeholder="PasswordConfirm" />
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-block" type="submit">Регистрация</button>
+				</div>
             </form>
             <div>
                 <a asp-controller="Home" asp-action="Index">На главную</a>

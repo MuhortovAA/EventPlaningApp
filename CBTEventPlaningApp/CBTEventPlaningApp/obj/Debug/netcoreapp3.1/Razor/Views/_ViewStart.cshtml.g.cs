@@ -19,8 +19,15 @@ using CBTEventPlaningApp.Services.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\Source\Git\EventPlaningApp\CBTEventPlaningApp\CBTEventPlaningApp\Views\_ViewImports.cshtml"
+using CBTEventPlaningApp.Services.Models.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bb54a50a5309be91b8323fa5ac9b13cb30096a0f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"283dbe4bc21add6fb5254d8bcf0d05959c2bd82b", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
